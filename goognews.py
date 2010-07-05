@@ -12,24 +12,11 @@ class Googlenews:
 	""" This class helps to fetch top news from specific catagories of Goog News"""
 	def get_input(self):
 		""" Prompts user to select his choice of news """
+		bold = "\033[1m"
+		reset = "\033[0;0m"
 		try:
-			print """ News feed list : \n
-							1 .Top
-							2 .World
-							3 .Australia
-							4 .Canada
-							5 .India
-							6 .Ireland
-							7 .New
-							8 .South
-							9 .US
-							10.UK
-							11.Business
-							12.Sci/Tech
-							13.Health
-							14.Sports
-							15.Entertainment """
-			news_type = int(raw_input("Which you you like to read : "))
+			print """ News feed list : \n1.   Top \n2.   World \n3.   Australia \n4.   Canada \n5.   India \n6.   Ireland \n7.   New \n8.   South \n9.   US \n10.  UK \n11.  Business \n12.  Sci/Tech \n13.  Health \n14.  Sports \n15.  Entertainment """
+			news_type = int(raw_input(bold+"Which you you like to read : "+reset))
 			return news_type
 		except ValueError:
 			print 'Invalid input, please select a number for the list'
