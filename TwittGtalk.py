@@ -1,10 +1,10 @@
 import sys
 import warnings
-from xmpp import *
-import urllib
-
 # Don you dare warn me!
 warnings.filterwarnings("ignore") 
+
+from xmpp import *
+import urllib
 
 #### EDIT THE BELOW ####
 GUSERNAME = "hemanth.hm"
