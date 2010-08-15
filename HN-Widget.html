@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+  <title>Hackers News Front page</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/2.7.0/build/base/base.css" type="text/css">
+<style type="text/css" media="screen">
+html,body{color:#fff;background:#222;font-family:calibri,verdana,arial,sans-serif;}
+h2{background:#369;padding:5px;color:#fff;font-weight:bold;-moz-box-shadow: 0px 4px 2px -2px #000;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow: #000 1px 1px;}
+body {
+  margin: 30px;
+}
+</style>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+    <body>
+<script> 
+$.getJSON(
+    "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20hackernews.frontpage%20limit%2010%3B&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys",
+    function(data) { 
+    $.each(data.query.results.story, function(i,res){
+ 
+ content = '<p>'+'<a href="' + res.url  + '"'+'target="_blank">'+res.title +'</a>'+'</p>';  
+ $(content).appendTo("#news");
+
+            
+            });
+            
+});
+          
+</script>
+<div class="yui-d0" id="lts"> 
+<h2>First 10 posts of hackers news:</h2>
+ <div id="news">
+</div>
+</div>
+    </body>
+</html>
