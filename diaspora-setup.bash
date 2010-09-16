@@ -82,7 +82,7 @@ echo "Cloned the source.."
 # Install extra gems 
 cd diaspora
 echo "Installing more gems.."
-bundle install
+sudo bundle install
 echo "Installed."
 
 # Install DB setup 
