@@ -12,17 +12,17 @@ shopt -s extglob
 
 # Install build tools 
 echo "Installing build tools.."
-sudo aptitude install build-essential libxslt1.1 libxslt1-dev libxml2
+sudo apt-get  install build-essential libxslt1.1 libxslt1-dev libxml2
 echo "..Done installing build tools"
 
 # Install Ruby 1.8.7 
 echo "Installing ruby-full Ruby 1.8.7.." 
-sudo aptitude install ruby-full
+sudo apt-get  install ruby-full
 echo "..Done installing Ruby"
 
 # Install Rake 
 echo "Installing rake.."
-sudo aptitude install rake
+sudo apt-get  install rake
 echo "..Done installing rake"
 
 # Get the current release and install mongodb
@@ -36,19 +36,19 @@ echo "."
 echo "Fetching keys.."
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 echo "."
-sudo aptitude update
+sudo apt-get  update
 echo "."
-sudo aptitude install mongodb-stable
+sudo apt-get  install mongodb-stable
 echo "Done installing monngodb-stable.."
 
 # Install imagemagick
 echo "Installing imagemagick.."
-sudo aptitude install imagemagick libmagick9-dev
+sudo apt-get  install imagemagick libmagick9-dev
 echo "Installed imagemagick.."
 
 # Install git-core
 echo "Installing git-core.."
-sudo aptitude install git-core
+sudo apt-get  install git-core
 echo "Installed git-core.."
 
 # Setting up ruby gems
