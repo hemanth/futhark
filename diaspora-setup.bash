@@ -1,7 +1,7 @@
 #!/bin/bash
 # Author : hemanth.hm@gmail.com
 # Site : www.h3manth.com
-# This script makes the install setup for diaspora
+# This script helps to setup diaspora.
 #
 
 # Set extented globbing 
@@ -50,7 +50,8 @@ echo "Installed git-core.."
 echo "Fetching and installing ruby gems.."
 (
     echo "."
-    cd /tmp ; wget http://production.cf.rubygems.org/rubygems/rubygems-1.3.7.tgz
+    cd /tmp 
+    wget http://production.cf.rubygems.org/rubygems/rubygems-1.3.7.tgz
     echo "."
     tar -xf rubygems-1.3.7.tgz
     echo "."
