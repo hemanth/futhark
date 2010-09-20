@@ -69,10 +69,21 @@ class Base:
 	# Put buttons to the container
 	fixed.put(self.button1,20,30)
 	fixed.put(self.button2,100,30)
-	fixed.put(self.button3,150,30)
+	fixed.put(self.button3,150,30) 
 
+	"""
+	Uncoment this to sectio and comment fxied container,
+	to see how VBox buttons work. Can change VBox to HBox to see th difference
+
+	self.box1 = gtk.VBox()
+	self.box1.pack_start(self.button1)
+	self.box1.pack_start(self.button2)
+	self.box1.pack_start(self.button3) """
+						
 	# Add fixed container to the main window 
 	self.window.add(fixed)
+	# If box enabled, comment the able line and add
+	# self.window.add(self.box1)
 	# Show the created window, button...all 
 	self.window.show_all()
 	# Connect destroy singal of the window to destory method [X]
