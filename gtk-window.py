@@ -51,7 +51,7 @@ class Base:
 	# On button EXIT clicked destory the window
 	self.button2.connect("clicked",self.hideit)
 	# Set tool tips
-	self.button1.set_tooltip_text("This button will hide the exit button")
+	self.button2.set_tooltip_text("This button will hide the exit button")
 
 
 	# BUTTON3
@@ -60,9 +60,11 @@ class Base:
 	# On button EXIT clicked destory the window
 	self.button3.connect("clicked",self.showit)
 	# Set tool tips
-	self.button1.set_tooltip_text("This button will show the exit button")
+	self.button3.set_tooltip_text("This button will show the exit button")
 
+	self.label1 = gtk.Label("This is a label")
 
+	"""
 	# A simple container
 	fixed = gtk.Fixed()
 	
@@ -70,20 +72,21 @@ class Base:
 	fixed.put(self.button1,20,30)
 	fixed.put(self.button2,100,30)
 	fixed.put(self.button3,150,30) 
+	fixed.put(self.label1,200,100) """
 
 	"""
-	Uncoment this to sectio and comment fxied container,
-	to see how VBox buttons work. Can change VBox to HBox to see th difference
-
+	Comment this to section and uncomment fxied container,
+	to see how Fixed works. One can change VBox to HBox to see th difference	"""
 	self.box1 = gtk.VBox()
 	self.box1.pack_start(self.button1)
 	self.box1.pack_start(self.button2)
-	self.box1.pack_start(self.button3) """
+	self.box1.pack_start(self.button3)
+	self.box1.pack_start(self.label1)
 						
 	# Add fixed container to the main window 
-	self.window.add(fixed)
-	# If box enabled, comment the able line and add
-	# self.window.add(self.box1)
+	# self.window.add(fixed)
+	# If box enabled, uncomment the above and comment below line
+	self.window.add(self.box1)
 	# Show the created window, button...all 
 	self.window.show_all()
 	# Connect destroy singal of the window to destory method [X]
