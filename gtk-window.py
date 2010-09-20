@@ -19,6 +19,11 @@ class Base:
 	# On click of the third button, show the exit button
 	self.button1.show()
 
+    def relable(self,widget,data=None):
+	# on click of the fourth button, relable the label
+	self.label1.set_text("Relabled!")
+
+
     # init 
     def __init__(self):
 
@@ -62,6 +67,11 @@ class Base:
 	# Set tool tips
 	self.button3.set_tooltip_text("This button will show the exit button")
 
+	# BUTTON4
+	self.button4 = gtk.Button("Relable")
+	self.button4.connect("clicked",self.relable)
+	
+	# Create a simple label	
 	self.label1 = gtk.Label("This is a label")
 
 	"""
@@ -82,6 +92,7 @@ class Base:
 	self.box1.pack_start(self.button2)
 	self.box1.pack_start(self.button3)
 	self.box1.pack_start(self.label1)
+	self.box1.pack_start(self.button4)
 						
 	# Add fixed container to the main window 
 	# self.window.add(fixed)
