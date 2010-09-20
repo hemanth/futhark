@@ -68,7 +68,7 @@ class Base:
 
 	# BUTTON3
 	# Simple sample button with text as EXIT	
-	self.button3 = gtk.Button("Show")
+	self.button3 = gtk.ToggleButton("Show")
 	# On button EXIT clicked destory the window
 	self.button3.connect("clicked",self.showit)
 	# Set tool tips
