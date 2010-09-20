@@ -29,7 +29,9 @@ class Base:
 	# As text is change in the textbox, the window title  and the label changes
 	self.window.set_title(self.textbox.get_text())
 	self.label1.set_text(self.textbox.get_text())
-
+    
+    def combo_text(self,widget,data=None):
+	self.textbox.set_text(widget.get_active_text())
 
     # init 
     def __init__(self):
@@ -100,6 +102,12 @@ class Base:
 	"""
 	Comment this to section and uncomment fxied container,
 	to see how Fixed works. One can change VBox to HBox to see th difference	"""
+
+	# Combo box
+	self.combo = gtk.combo_box_entry_new_text()
+	self.combo.connect("changed",self.combo_text)
+	self.combo.append_text("This is some text")
+	self.combo.append_text("Some more text")
 	
 	# HBox 
 	self.box1 = gtk.HBox()
@@ -117,7 +125,7 @@ class Base:
 	self.box2.pack_start(self.box1)
 	self.box2.pack_start(self.label1)
 	self.box2.pack_start(self.textbox)
-
+	self.box2.pack_start(self.combo)
 	# Add fixed container to the main window 
 	# self.window.add(fixed)
 	# If box enabled, uncomment the above and comment below line
