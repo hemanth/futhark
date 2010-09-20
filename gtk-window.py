@@ -1,5 +1,3 @@
-#!/usr/bin/evn python
-
 import pygtk
 # Check for minmial requirement of version 2.0
 pygtk.require('2.0')
