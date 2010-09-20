@@ -17,6 +17,8 @@ class Base:
 	self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
 	# Set the postion of WINDOW to center
 	self.window.set_position(gtk.WIN_POS_CENTER)
+	# Set window size
+	self.window.set_size_request(600,400)
 	# Show the created window 
 	self.window.show()
 	# Connect destroy singal of the window to destory method [X]
