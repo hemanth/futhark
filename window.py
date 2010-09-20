@@ -7,10 +7,19 @@ import gtk
 
 class Base:
     def destroy(self,widget, data=None):
+	# This gets printed in the console
 	print "Have a nice day"
 
 	# Terminate window on destroy singal
 	gtk.main_quit()
+
+    def hideit(self,widget, data=None):
+	# On click of second button, hide the exit button
+	self.button1.hide()
+
+    def showit(self,widget, data=None):
+	# On click of the third button, show the exit button
+	self.button1.show()
 
     # init 
     def __init__(self):
@@ -28,10 +37,26 @@ class Base:
 	self.button1 = gtk.Button("EXIT")
 	# On button EXIT clicked destory the window
 	self.button1.connect("clicked",self.destroy)
-	
+
+	# Simple sample button with text as EXIT	
+	self.button2 = gtk.Button("Hide")
+	# On button EXIT clicked destory the window
+	self.button2.connect("clicked",self.hideit)
+
+	# Simple sample button with text as EXIT	
+	self.button3 = gtk.Button("Show")
+	# On button EXIT clicked destory the window
+	self.button3.connect("clicked",self.showit)
+
+	# A simple container
 	fixed = gtk.Fixed()
-	fixed.put(self.button1,20,30)
 	
+	# Put buttons to the container
+	fixed.put(self.button1,20,30)
+	fixed.put(self.button2,100,30)
+	fixed.put(self.button3,150,30)
+
+	# Add fixed container to the main window 
 	self.window.add(fixed)
 	# Show the created window, button...all 
 	self.window.show_all()
