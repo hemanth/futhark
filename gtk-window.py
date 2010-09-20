@@ -33,23 +33,37 @@ class Base:
 	# Set window title
 	self.window.set_title("Sample GTK window")
 
+	# Set tool tip
+	self.window.set_tooltip_text("This a sample GTK window")
+
 	# Set window size
 	self.window.set_size_request(600,400)
 	
+	# BUTTON1
 	# Simple sample button with text as EXIT	
 	self.button1 = gtk.Button("EXIT")
 	# On button EXIT clicked destory the window
 	self.button1.connect("clicked",self.destroy)
+	# Set tool tips
+	self.button1.set_tooltip_text("This button will close this window")
 
+	# BUTTON2
 	# Simple sample button with text as EXIT	
 	self.button2 = gtk.Button("Hide")
 	# On button EXIT clicked destory the window
 	self.button2.connect("clicked",self.hideit)
+	# Set tool tips
+	self.button1.set_tooltip_text("This button will hide the exit button")
 
+
+	# BUTTON3
 	# Simple sample button with text as EXIT	
 	self.button3 = gtk.Button("Show")
 	# On button EXIT clicked destory the window
 	self.button3.connect("clicked",self.showit)
+	# Set tool tips
+	self.button1.set_tooltip_text("This button will show the exit button")
+
 
 	# A simple container
 	fixed = gtk.Fixed()
