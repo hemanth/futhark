@@ -26,8 +26,9 @@ class Base:
 	    self.label1.set_text("Relabled")
 
     def textchange(self,widget,data=None):
-	# As text is change in the textbox, the window title is change
+	# As text is change in the textbox, the window title  and the label changes
 	self.window.set_title(self.textbox.get_text())
+	self.label1.set_text(self.textbox.get_text())
 
 
     # init 
