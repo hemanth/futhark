@@ -30,6 +30,9 @@ class Base:
 	# Set the postion of WINDOW to center
 	self.window.set_position(gtk.WIN_POS_CENTER)
 
+	# Set window title
+	self.window.set_title("Sample GTK window")
+
 	# Set window size
 	self.window.set_size_request(600,400)
 	
