@@ -20,7 +20,10 @@ class Base:
 
     def relable(self,widget,data=None):
 	# On click of the fourth button, relable the label
-	self.label1.set_text("Relabled!")
+	if self.label1.get_text() == "Relabled":
+	    self.label1.set_text("Relabled!! Again")
+	else:
+	    self.label1.set_text("Relabled")
 
     def textchange(self,widget,data=None):
 	# As text is change in the textbox, the window title is change
@@ -43,7 +46,7 @@ class Base:
 	self.window.set_tooltip_text("This a sample GTK window")
 
 	# Set window size
-	self.window.set_size_request(600,400)
+	self.window.set_size_request(600,100)
 	
 	# BUTTON1
 	# Simple sample button with text as EXIT	
@@ -96,18 +99,28 @@ class Base:
 	"""
 	Comment this to section and uncomment fxied container,
 	to see how Fixed works. One can change VBox to HBox to see th difference	"""
-	self.box1 = gtk.VBox()
+	
+	# HBox 
+	self.box1 = gtk.HBox()
 	self.box1.pack_start(self.button1)
 	self.box1.pack_start(self.button2)
 	self.box1.pack_start(self.button3)
-	self.box1.pack_start(self.label1)
 	self.box1.pack_start(self.button4)
-	self.box1.pack_start(self.textbox)
+	# self.box1.pack_start(self.textbox)
+	# self.box1.pack_start(self.label1)
+	# Above was added to VBox to make it better
 						
+	# VBox	
+	self.box2 = gtk.VBox()
+	# Pack HBox in VBox
+	self.box2.pack_start(self.box1)
+	self.box2.pack_start(self.label1)
+	self.box2.pack_start(self.textbox)
+
 	# Add fixed container to the main window 
 	# self.window.add(fixed)
 	# If box enabled, uncomment the above and comment below line
-	self.window.add(self.box1)
+	self.window.add(self.box2)
 	# Show the created window, button...all 
 	self.window.show_all()
 	# Connect destroy singal of the window to destory method [X]
