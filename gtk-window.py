@@ -7,7 +7,6 @@ class Base:
     def destroy(self,widget, data=None):
 	# This gets printed in the console
 	print "Have a nice day"
-
 	# Terminate window on destroy singal
 	gtk.main_quit()
 
@@ -20,8 +19,12 @@ class Base:
 	self.button1.show()
 
     def relable(self,widget,data=None):
-	# on click of the fourth button, relable the label
+	# On click of the fourth button, relable the label
 	self.label1.set_text("Relabled!")
+
+    def textchange(self,widget,data=None):
+	# As text is change in the textbox, the window title is change
+	self.window.set_title(self.textbox.get_text())
 
 
     # init 
@@ -73,6 +76,12 @@ class Base:
 	
 	# Create a simple label	
 	self.label1 = gtk.Label("This is a label")
+	
+	#TEXTBOX, connect textchange method, for the signal changed 
+	self.textbox = gtk.Entry()
+	self.textbox.set_text("As you type see the window title")
+	self.textbox.connect("changed",self.textchange)
+
 
 	"""
 	# A simple container
@@ -93,6 +102,7 @@ class Base:
 	self.box1.pack_start(self.button3)
 	self.box1.pack_start(self.label1)
 	self.box1.pack_start(self.button4)
+	self.box1.pack_start(self.textbox)
 						
 	# Add fixed container to the main window 
 	# self.window.add(fixed)
