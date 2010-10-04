@@ -9,6 +9,7 @@ function useage()
 	cat << EOU
 Useage: bash $0 <path to the binary> <path to copy the dependencies>
 EOU
+exit 1
 }
 
 #Validate the inputs
