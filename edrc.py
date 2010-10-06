@@ -62,9 +62,20 @@ class edrc:
 		''' Enumerate over them to print the options '''
 		for i,shell in enumerate(shells):
 			print '%i %s %s'% (i+1,"=>",shell)
+		
+		''' Read input option '''
+		rc=raw_input('Select the shell for which you need to edit/create rc [ Any other key to exit ] : ')
+		
+		''' Validate inputs '''
+		if rc >= len(shells):
+			sys.exit(1)
+ 
+		try:
+			int(rc)
+		except ValueError, e:
+			sys.exit(1)
 
-		rc=input('Select the shell for which you need to edit/create rc : ')
-
+		''' If all clear edit '''
 		self.edit(shells[rc-1])
 		
 def main():
