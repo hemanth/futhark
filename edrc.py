@@ -64,10 +64,9 @@ class edrc:
 			print '%i %s %s'% (i+1,"=>",shell)
 		
 		''' Read input option '''
+		''' Trap keyboard Interrupts '''		
 		try:
 			rc=raw_input('Select the shell for which you need to edit/create rc [ Any other key to exit ] : ')
-		
-		''' Trap keyboard Interrupts '''		
 		except (KeyboardInterrupt, SystemExit):
 			print "\n"
 			sys.exit(1)
