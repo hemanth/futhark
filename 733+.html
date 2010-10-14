@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+
+map = new Object();
+map["a"]="4";
+map["b"]="8";
+map["c"]="(";
+map["d"]="[)";
+map["e"]="3";
+map["f"]="|=";
+map["g"]="6";
+map["h"]="|-|";
+map["i"]="!";
+map["j"]="_|";
+map["k"]="|<";
+map["l"]="|_";
+map["m"]="|v|";
+map["n"]="()";
+map["o"]="0";
+map["p"]="|*";
+map["q"]="0_";
+map["r"]="|2";
+map["s"]="5";
+map["t"]="+";
+map["u"]="|_|";
+map["v"]="√";
+map["w"]='uu';
+map["x"]="%";
+map["y"]="`/";
+map["z"]="7_";
+
+
+function change(id){
+  var txt = document.getElementById(id).value.toLowerCase();
+  var old_txt = '';
+  var new_txt = '';
+     for(var i=txt.length-1;i<txt.length;i++){
+         old_txt = txt.charCodeAt(i);
+         //chr ref for a=97 for z=123 isNaN takes care of any other key presses
+            if(old_txt>=97&&old_txt<=123&&!isNaN(old_txt)){
+               new_txt = map[txt.charAt(i)];
+               //replace the old character for the new one
+               document.getElementById(id).value = txt.replace(String.fromCharCode(old_txt), new_txt);
+            }
+     }
+}
+
+</script>
+
+<body>
+<textarea rows=10 cols=60 name="styled-textarea" id="styled" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" onkeypress="javascript:change(this.id);"></textarea>
+</body>
+</html>
+
