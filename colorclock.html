@@ -1,0 +1,50 @@
+<html>
+<head>
+<script type="text/javascript">
+<!--
+
+function updateClock ( )
+{
+  var cur_time = new Date ( );
+
+  var cur_hrs = cur_time.getHours ( );
+  var cur_mins = cur_time.getMinutes ( );
+  var cur_secs = cur_time.getSeconds ( );
+  cur_mins = ( cur_mins < 10 ? "0" : "" ) + cur_mins;
+  cur_secs = ( cur_secs < 10 ? "0" : "" ) + cur_secs;
+  cur_hrs = ( cur_hrs > 12 ) ? cur_hrs - 12 : cur_hrs;
+  cur_hrs = ( cur_hrs == 0 ) ? 12 : cur_hrs;
+  var cur_timeStr = cur_hrs + ":" + cur_mins + ":" + cur_secs;
+  document.getElementById("clock").firstChild.nodeValue = cur_timeStr;
+  document.bgColor=(cur_hrs.toString(16)+cur_mins.toString(16)+cur_secs.toString(16))
+
+}
+
+// -->
+</script>
+<style type="text/css">
+html, body, p {
+ margin: 0;
+}
+
+span{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 50%;
+    margin-top: -50px;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    font-size: 65pt;
+ text-align: center;
+} 
+
+</style>
+</head>
+<body>
+<body onload="updateClock(); setInterval('updateClock()', 1 )">
+<span id="clock">&nbsp;</span>
+</body>
+</html>
