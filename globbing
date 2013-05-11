@@ -1,0 +1,31 @@
+# Bash
+for log in /var/log/*.log
+do
+    grep -q 'ERROR' "$log" && echo "$log"
+done
+
+# Python
+import glob
+for log in glob.glob('/var/log/*.log'):
+    with open(log) as f:
+        data = f.read()
+        if 'ERROR' in data:
+            print log
+
+# Ruby 
+Dir['/var/log/*.log'].each do |log|
+    puts log if File.open(log).grep(/ERROR/)
+end
+
+# Perl
+use File::Glob qw( bsd_glob );
+ 
+foreach my $log (bsd_glob('/var/log/*.log')) {
+   open(my $fh, '<', $log);
+   while (<$fh>) {
+      if (qr/ERROR/) {
+         print  $log;
+         last;
+      }
+   }
+}
