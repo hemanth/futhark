@@ -1,0 +1,25 @@
+function ❤ () { yes '❤' | head -n$1 | xargs echo; }  # bash
+
+# python
+l={} 
+l['❤'] = lambda x: "❤ "*x
+print l['❤'](12).decode('utf8')
+
+
+# Perl
+use utf8;
+*{'❤'} = sub { print '❤ ' x shift; }; 
+${\'❤'}->(12);  
+
+# Ruby 
+#!/usr/bin/ruby -Ku
+def ❤(x)
+    puts '❤ '*x;
+end
+
+# JS:
+String.prototype.repeat = function(n) { 
+return (new Array(n+1)).join(this.valueOf()); 
+};
+this["❤"] = function (x) { return '❤ '.repeat(x); }; 
+this["❤"](12)
