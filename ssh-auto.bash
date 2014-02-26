@@ -18,7 +18,7 @@ ssh-copy-id -i ~/.ssh/id_rsa ${login_name}@${host_name}
 # Add a function to ~/.bashrc.
 cat >> ~/.bashrc << EOF
 function assh(){
-while true; do ssh ${login_name}@${host_name} ; done
+	while true; do ssh ${login_name}@${host_name} ; done
 }
 EOF
 
