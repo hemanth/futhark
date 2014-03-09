@@ -10,7 +10,7 @@ else
   	generator-angular
   	generator-backbone
   	generator-bootstrap
-    generator-chrome-extension
+  	generator-chrome-extension
   	generator-chromeapp
   	generator-commonjs
   	generator-dummy
