@@ -9,7 +9,7 @@ zlib1g zlib1g-dev libssl-dev ncurses-dev libyaml-dev
 
 wget http://ftp.ruby-lang.org/pub/ruby/ruby-2.0-stable.tar.gz
 
-tar -zxvf ruby-2.0-stable.tar.gz
+tar -zxvf ruby-2.0-stable.tar.gz && rm ruby-2.0-stable.tar.gz
 
 cd ruby*
 
