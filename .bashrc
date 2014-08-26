@@ -11,3 +11,6 @@ alias gitthem="curl -s https://api.github.com/orgs/$1/repos | jq .[].git_url | t
 
 #Start node with ES6 support.
 alias es6="node --use-strict $(node --v8-options | grep harm | awk '{print $1}'| xargs)"
+
+#git ingore.
+function gi() { curl http://www.gitignore.io/api/$@ ;}
