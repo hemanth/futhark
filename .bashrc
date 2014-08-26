@@ -14,3 +14,9 @@ alias es6="node --use-strict $(node --v8-options | grep harm | awk '{print $1}'|
 
 #git ingore.
 function gi() { curl http://www.gitignore.io/api/$@ ;}
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
